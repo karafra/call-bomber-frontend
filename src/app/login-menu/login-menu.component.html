@@ -1,0 +1,11 @@
+<ul class="navbar-nav" *ngIf="isAuthenticated | async">
+    <li class="nav-item">
+        <a class="nav-link text-dark" [routerLink]='["/authentication/profile"]' title="Manage"> Sign out {{ userName |
+            async }}</a>
+    </li>
+</ul>
+<ul class="navbar-nav" *ngIf="!(isAuthenticated | async)">
+    <li class="nav-item">
+        <a class="nav-link text-dark" [routerLink]='["/auth"]'>Sign in</a>
+    </li>
+</ul>
